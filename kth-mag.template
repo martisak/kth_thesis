@@ -1,0 +1,61 @@
+\documentclass[a4paper]{kth-mag}
+
+\usepackage[eng,exjobb]{KTHEEtitlepage}
+\usepackage[cp1252]{inputenc}
+
+\usepackage[swedish,english]{babel}
+\usepackage{lipsum}
+\usepackage{fontspec}
+\usepackage{titlesec}
+\defaultfontfeatures{Ligatures=TeX}
+
+\usepackage{kthcolors}
+\usepackage{graphicx} % Required for including images
+\usepackage{hyperref}
+
+\hypersetup{
+    %draft, % Uncomment to remove all links (useful for printing in black and white)
+    colorlinks=true, breaklinks=true, bookmarks=true,bookmarksnumbered,
+    urlcolor=kth-darkgray, linkcolor=kth-blue, citecolor=kth-green, % Link colors
+    pdftitle={$title$}, % PDF title
+    pdfauthor={\textcopyright}, % PDF Author
+    pdfsubject={}, % PDF Subject
+    pdfkeywords={}, % PDF Keywords
+    pdfcreator={pdfLaTeX}, % PDF Creator
+    pdfproducer={LaTeX with hyperref and ClassicThesis} % PDF producer
+}
+
+\begin{document}
+
+                \ititle{$title$}
+                $if(subtitle)$\isubtitle{$subtitle$}$endif$ % Optional
+                \idate{$date$}
+                \irefnr{TRITA-EE 2006:666}
+                \iauthor{$author$}
+                \makeititle
+
+    $if(abstract)$
+    \begin{abstract}
+    $abstract.eng$
+    \end{abstract}
+    \clearpage
+    \selectlanguage{swedish}
+    \begin{abstract}
+    $abstract.swe$
+    \end{abstract}
+    $endif$
+    \selectlanguage{english}
+
+    \pagenumbering{roman}
+    \clearpage
+    \setcounter{tocdepth}{1}
+    \tableofcontents
+    \clearpage
+    \listoffigures
+    \clearpage
+    \listoftables
+    \mainmatter
+    \pagenumbering{arabic}
+
+$body$
+\end{document}
