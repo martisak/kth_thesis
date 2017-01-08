@@ -11,7 +11,7 @@ This is a template based on the [KTH NADA templates](http://system.csc.kth.se/mi
 
 Here's the full pipeline, although most of this is not implemented in the examples yet.
 
-![Pipeline](dot-build-document-1.svg)
+![Pipeline](dot-build-document-1.png)
 
 # Installation Instructions
 
