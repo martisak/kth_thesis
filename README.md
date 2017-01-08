@@ -26,9 +26,10 @@ sudo pip install pandoc-eqnos
 
 ## Templates and packages
 
-Install these the normal way.
+Install these the normal way. See [LaTeX och TeX på NADA](http://system.csc.kth.se/misc/tex/) for more information.
 
-* [LaTeX och TeX på NADA](http://system.csc.kth.se/misc/tex/).
+* [KTH Thesis Template](ftp://ftp.nada.kth.se/pub/tex/local/kthesis.tar.gz)
+* [KTH Symbol](ftp://ftp.nada.kth.se/pub/tex/local/kthsym.tar.gz)
 * [KTH Colorscheme for LaTeX](https://github.com/KTH-AC/kthcolors)
 * [Titlepage](https://svn.kwarc.info/repos/arXMLiv/trunk/sty/KTHEEtitlepage.sty)
 
