@@ -7,6 +7,12 @@ This is a template based on the [KTH NADA templates](http://system.csc.kth.se/mi
 <img src="example/kth-6.png" width="40%"/>
 <img src="example/kth-8.png" width="40%"/>
 
+## The pipeline
+
+Here's the full pipeline, although most of this is not implemented in the examples yet.
+
+![Pipeline](dot-build-document-1.svg)
+
 # Installation Instructions
 
 Tested on Ubuntu.
