@@ -16,9 +16,9 @@ before_install:
   - sudo apt-get update -qq
   - sudo apt-get install texlive-full
   - sudo apt-get install haskell-platform
-  - sudo apt-get install haskell-platform
-  - cabal update
-  - cabal install pandoc-1.17.2 pandoc-citeproc pandoc-crossref
+  #- cabal update
+  #- cabal install pandoc-1.17.2 pandoc-citeproc pandoc-crossref
+  - wget https://github.com/jgm/pandoc/releases/download/1.19.1/pandoc-1.19.1-1-amd64.deb && ar p pandoc-1.19.1-1-amd64.deb data.tar.gz | tar zx
   - sudo pip install pandoc-eqnos pandoc-shortcaption
   - sudo apt-get install lmodern
 
