@@ -15,7 +15,7 @@ PANDOC_OPTIONS=-f markdown+table_captions --table-of-contents --filter pandoc-sh
 PANDOC_REFERENCES=--csl=$(CSL) --bibliography=$(BIBTEX)
 
 RM = /bin/rm -f
-PANDOC = /home/$(USER)/.cabal/bin/pandoc
+PANDOC = pandoc
 RSCRIPT=/usr/bin/Rscript
 LATEX=/usr/bin/xelatex
 
