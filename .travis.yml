@@ -18,7 +18,7 @@ before_install:
   - sudo apt-get install haskell-platform
   - sudo apt-get install haskell-platform
   - cabal update
-  - cabal install pandoc pandoc-citeproc pandoc-crossref
+  - cabal install pandoc-1.17.2 pandoc-citeproc pandoc-crossref
   - sudo pip install pandoc-eqnos pandoc-shortcaption
   - sudo apt-get install lmodern
 
