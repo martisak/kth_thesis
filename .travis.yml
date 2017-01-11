@@ -1,0 +1,27 @@
+# Link repository with Travis CI
+# https://travis-ci.org/
+
+branches:
+  only:
+    - master
+
+language: bash
+
+env:
+  global:
+    - PATH=$TRAVIS_BUILD_DIR/usr/bin/:$PATH
+
+before_install:
+  # Install TeX Live
+  - sudo apt-get update -qq
+  - sudo apt-get install texlive-full
+  - sudo apt-get install haskell-platform
+  - sudo apt-get install haskell-platform
+  - cabal update
+  - cabal install pandoc pandoc-citeproc pandoc-crossref
+  - sudo pip install pandoc-eqnos pandoc-shortcaption
+  - sudo apt-get install lmodern
+
+# Attempt to create a PDF
+script:
+  - make -C example/master_thesis/

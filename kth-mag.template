@@ -1,7 +1,6 @@
 \documentclass[a4paper]{kth-mag}
 
 \usepackage[eng,exjobb]{KTHEEtitlepage}
-\usepackage[cp1252]{inputenc}
 
 \usepackage[swedish,english]{babel}
 \usepackage{lipsum}
