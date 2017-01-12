@@ -5,6 +5,9 @@ branches:
   only:
     - master
 
+cache:
+  - pip
+
 language: bash
 
 env:
@@ -12,7 +15,7 @@ env:
     - PATH=$TRAVIS_BUILD_DIR/usr/bin/:$PATH
 
 before_install:
-  - make -p devel/templates
+  - mkdir -p devel/templates
   - cd devel/templates
   # Install TeX Live
   - sudo apt-get update -qq
