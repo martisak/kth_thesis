@@ -27,6 +27,8 @@ before_install:
   - sudo pip install pandoc-eqnos pandoc-shortcaption
   - sudo apt-get install lmodern
   - git clone https://github.com/citation-style-language/styles.git styles
+  - pwd
+  - ls
 
 # Attempt to create a PDF
 script:
