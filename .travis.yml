@@ -32,4 +32,4 @@ before_install:
 
 # Attempt to create a PDF
 script:
-  - make -C example/master_thesis/
+  - make -C kth_thesis/example/master_thesis/
