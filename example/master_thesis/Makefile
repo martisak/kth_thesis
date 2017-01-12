@@ -1,11 +1,12 @@
 SOURCES=$(wildcard *.md)
-DIR=/home/$(USER)/devel/templates/
+DIR=/home/travis/build/martisak/devel/templates
+#/home/$(USER)/devel/templates
 
 TEMPLATE=$(DIR)/kth_thesis/kth-mag.template
 #TEMPLATE=$(DIR)/ereport/erimkdoc.template
 #TEMPLATE=$(DIR)/article/article.template
-BIBTEX=$(DIR)/bibtex/martin.bib
-CSL=$(DIR)/ereport/ieee.csl
+BIBTEX=example.bib
+CSL=$(DIR)/styles/ieee.csl
 
 TARGET=build
 #TEMPLATE=$(DIR)/erimkdoc.template
