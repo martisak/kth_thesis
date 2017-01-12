@@ -1,5 +1,5 @@
 SOURCES=$(wildcard *.md)
-DIR=/home/travis/build/martisak/devel/templates
+DIR=$TRAVIS_BUILD_DIR
 #/home/$(USER)/devel/templates
 
 TEMPLATE=$(DIR)/kth_thesis/kth-mag.template
