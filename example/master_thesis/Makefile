@@ -8,7 +8,6 @@ CSL=$(DIR)/styles/ieee.csl
 
 TARGET=build
 
-
 PANDOC_OPTIONS=-f markdown+table_captions --table-of-contents --filter pandoc-shortcaption --mathjax=https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML --chapters
 #--filter pandoc-crossref --number-sections
 
@@ -29,7 +28,7 @@ pdf: $(TARGET) $(TEX_OBJECTS) $(PDF_OBJECTS)
 
 #-interaction=batchmode
 %.pdf: %.tex
-	$(LATEX) -interaction=batchmode -output-directory=$(TARGET) $(TARGET)/$<
+	$(LATEX) -output-directory=$(TARGET) $(TARGET)/$<
 	$(LATEX) -interaction=batchmode -output-directory=$(TARGET) $(TARGET)/$<
 	-ln -s $(TARGET)/$@
 
