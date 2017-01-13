@@ -16,8 +16,6 @@ env:
     - TEXMFHOME=~/texmf
 
 before_install:
-  - mkdir -p devel/templates
-  - cd devel/templates
   - mkdir -p $TEXMFHOME/tex/latex/kth/
   - sudo apt-get update -qq
   - sudo apt-get install texlive-full
@@ -32,6 +30,8 @@ before_install:
   - wget https://svn.kwarc.info/repos/arXMLiv/trunk/sty/KTHEEtitlepage.sty -P $TEXMFHOME/tex/latex/kth/
   - git clone https://github.com/KTH-AC/kthcolors
   - cp -r kthcolors/lib $TEXMFHOME
+  - pwd
+  - ls
 
 # Attempt to create a PDF
 script:
