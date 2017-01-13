@@ -13,6 +13,7 @@ language: bash
 env:
   global:
     - PATH=$TRAVIS_BUILD_DIR/usr/bin/:$PATH
+    - TEXMFHOME=~/texmf
 
 before_install:
   # Install TeX Live
@@ -25,6 +26,13 @@ before_install:
   - sudo pip install pandoc-eqnos pandoc-shortcaption
   - sudo apt-get install lmodern
   - git clone https://github.com/citation-style-language/styles.git $TRAVIS_BUILD_DIR/../styles
+  - wget ftp://ftp.nada.kth.se/pub/tex/local/kthesis.tar.gz
+  - wget ftp://ftp.nada.kth.se/pub/tex/local/kthsym.tar.gz
+  - tar xvzf kthesis.tar.gz -C $TEXMFHOME
+  - tar xvzf kthsym.tar.gz -C $TEXMFHOME
+  - wget https://svn.kwarc.info/repos/arXMLiv/trunk/sty/KTHEEtitlepage.sty
+  - git clone https://github.com/KTH-AC/kthcolors
+  - cp -r kthcolors/lib $TEXMFHOME
   - pwd
   - ls
 
