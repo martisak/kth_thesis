@@ -29,7 +29,7 @@ before_install:
   - wget ftp://ftp.nada.kth.se/pub/tex/local/kthsym.tar.gz
   - tar xvzf kthesis.tar.gz -C $TEXMFHOME
   - tar xvzf kthsym.tar.gz -C $TEXMFHOME
-  - wget https://svn.kwarc.info/repos/arXMLiv/trunk/sty/KTHEEtitlepage.sty -O $TEXMFHOME/tex/latex/kth/
+  - wget https://svn.kwarc.info/repos/arXMLiv/trunk/sty/KTHEEtitlepage.sty -P $TEXMFHOME/tex/latex/kth/
   - git clone https://github.com/KTH-AC/kthcolors
   - cp -r kthcolors/lib $TEXMFHOME
 
