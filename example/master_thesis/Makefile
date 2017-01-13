@@ -3,16 +3,15 @@ DIR=../../../
 #/home/$(USER)/devel/templates
 
 TEMPLATE=$(DIR)/kth_thesis/kth-mag.template
-#TEMPLATE=$(DIR)/ereport/erimkdoc.template
-#TEMPLATE=$(DIR)/article/article.template
 BIBTEX=example.bib
 CSL=$(DIR)/styles/ieee.csl
 
 TARGET=build
-#TEMPLATE=$(DIR)/erimkdoc.template
-#--filter pandoc-crossref
-PANDOC_OPTIONS=-f markdown+table_captions --table-of-contents --filter pandoc-shortcaption --mathjax=https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-#--number-sections
+
+
+PANDOC_OPTIONS=-f markdown+table_captions --table-of-contents --filter pandoc-shortcaption --mathjax=https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML --chapters
+#--filter pandoc-crossref --number-sections
+
 PANDOC_REFERENCES=--csl=$(CSL) --bibliography=$(BIBTEX)
 
 RM = /bin/rm -f
@@ -26,13 +25,13 @@ PDF_OBJECTS=$(SOURCES:.md=.pdf)
 pdf: $(TARGET) $(TEX_OBJECTS) $(PDF_OBJECTS)
 
 %.tex: %.md
-	$(PANDOC)  -t latex --chapters --template=$(TEMPLATE) $(PANDOC_OPTIONS) $(PANDOC_REFERENCES) -o $(TARGET)/$@ $<
+	$(PANDOC)  -t latex --template=$(TEMPLATE) $(PANDOC_OPTIONS) $(PANDOC_REFERENCES) -o $(TARGET)/$@ $<
 
 #-interaction=batchmode
 %.pdf: %.tex
 	$(LATEX) -interaction=batchmode -output-directory=$(TARGET) $(TARGET)/$<
 	$(LATEX) -interaction=batchmode -output-directory=$(TARGET) $(TARGET)/$<
-	ln -s $(TARGET)/$@
+	-ln -s $(TARGET)/$@
 
 $(TARGET):
 	-mkdir $(TARGET)
