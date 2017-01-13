@@ -16,13 +16,11 @@ env:
     - TEXMFHOME=~/texmf
 
 before_install:
-  # Install TeX Live
-  - mkdir $TEXMFHOME
+  - mkdir -p devel/templates
+  - cd devel/templates
+  - mkdir -p $TEXMFHOME/tex/latex/kth/
   - sudo apt-get update -qq
   - sudo apt-get install texlive-full
-  - sudo apt-get install haskell-platform
-  #- cabal update
-  #- cabal install pandoc-1.17.2 pandoc-citeproc pandoc-crossref
   - wget https://github.com/jgm/pandoc/releases/download/1.17.2/pandoc-1.17.2-1-amd64.deb && ar p pandoc-1.17.2-1-amd64.deb data.tar.gz | tar zx
   - sudo pip install pandoc-eqnos pandoc-shortcaption
   - sudo apt-get install lmodern
@@ -31,11 +29,9 @@ before_install:
   - wget ftp://ftp.nada.kth.se/pub/tex/local/kthsym.tar.gz
   - tar xvzf kthesis.tar.gz -C $TEXMFHOME
   - tar xvzf kthsym.tar.gz -C $TEXMFHOME
-  - wget https://svn.kwarc.info/repos/arXMLiv/trunk/sty/KTHEEtitlepage.sty
+  - wget https://svn.kwarc.info/repos/arXMLiv/trunk/sty/KTHEEtitlepage.sty -O $TEXMFHOME/tex/latex/kth/
   - git clone https://github.com/KTH-AC/kthcolors
   - cp -r kthcolors/lib $TEXMFHOME
-  - pwd
-  - ls
 
 # Attempt to create a PDF
 script:
