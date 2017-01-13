@@ -17,6 +17,7 @@ env:
 
 before_install:
   # Install TeX Live
+  - mkdir $TEXMFHOME
   - sudo apt-get update -qq
   - sudo apt-get install texlive-full
   - sudo apt-get install haskell-platform
