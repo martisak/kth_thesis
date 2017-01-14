@@ -16,12 +16,15 @@ env:
     - TEXMFHOME=~/texmf
 
 before_install:
+  # LaTeX
   - mkdir -p $TEXMFHOME/tex/latex/kth/
   - sudo apt-get update -qq
-  - sudo apt-get install texlive texlive-xetex texlive-latex-extra
+  - sudo apt-get install texlive texlive-xetex texlive-latex-extra texlive-lang-swedish
+  - sudo apt-get install lmodern
+  # Pandoc
   - wget https://github.com/jgm/pandoc/releases/download/1.17.2/pandoc-1.17.2-1-amd64.deb && ar p pandoc-1.17.2-1-amd64.deb data.tar.gz | tar zx
   - sudo pip install pandoc-eqnos pandoc-shortcaption
-  - sudo apt-get install lmodern
+  # Extra LaTeX stuff
   - git clone https://github.com/citation-style-language/styles.git $TRAVIS_BUILD_DIR/../styles
   - wget ftp://ftp.nada.kth.se/pub/tex/local/kthesis.tar.gz
   - wget ftp://ftp.nada.kth.se/pub/tex/local/kthsym.tar.gz
