@@ -18,7 +18,7 @@ env:
 before_install:
   - mkdir -p $TEXMFHOME/tex/latex/kth/
   - sudo apt-get update -qq
-  - sudo apt-get install texlive-full
+  - sudo apt-get install texlive
   - wget https://github.com/jgm/pandoc/releases/download/1.17.2/pandoc-1.17.2-1-amd64.deb && ar p pandoc-1.17.2-1-amd64.deb data.tar.gz | tar zx
   - sudo pip install pandoc-eqnos pandoc-shortcaption
   - sudo apt-get install lmodern
