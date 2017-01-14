@@ -11,6 +11,4 @@ Here is some general text with a reference @Plain21:online.
 
 ## Subsection
 
-![Creative Commons](images/cc.logo.large.png "Short caption")
-
 # References

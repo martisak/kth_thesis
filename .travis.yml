@@ -25,8 +25,8 @@ before_install:
   - git clone https://github.com/citation-style-language/styles.git $TRAVIS_BUILD_DIR/../styles
   - wget ftp://ftp.nada.kth.se/pub/tex/local/kthesis.tar.gz
   - wget ftp://ftp.nada.kth.se/pub/tex/local/kthsym.tar.gz
-  - tar xvzf kthesis.tar.gz -C $TEXMFHOME/tex
-  - tar xvzf kthsym.tar.gz -C $TEXMFHOME/tex
+  - tar xvzf kthesis.tar.gz -C $TEXMFHOME
+  - tar xvzf kthsym.tar.gz -C $TEXMFHOME
   - wget https://raw.githubusercontent.com/karlkurzer/path_planner_tex/master/KTHEEtitlepage.sty -P $TEXMFHOME/tex/latex/kth/
   - wget https://github.com/karlkurzer/path_planner_tex/raw/master/kth_logo.pdf -P $TEXMFHOME/tex/generic/kthsym
   - git clone https://github.com/KTH-AC/kthcolors
