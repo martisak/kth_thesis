@@ -19,7 +19,7 @@ before_install:
   # LaTeX
   - mkdir -p $TEXMFHOME/tex/latex/kth/
   - sudo apt-get update -qq
-  - sudo apt-get install texlive texlive-xetex texlive-latex-extra texlive-lang-swedish lmodern
+  - sudo apt-get install texlive texlive-xetex texlive-latex-extra texlive-humanities texlive-lang-swedish lmodern
   # Pandoc
   - wget https://github.com/jgm/pandoc/releases/download/1.17.2/pandoc-1.17.2-1-amd64.deb && ar p pandoc-1.17.2-1-amd64.deb data.tar.gz | tar zx
   - sudo pip install pandoc-eqnos pandoc-shortcaption
