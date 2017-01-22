@@ -18,8 +18,8 @@ $endif$
 \renewcommand*{\arraystretch}{1.5}
 
 % Dotted lines, load after longtable
-\usepackage{arydshln}
-\renewcommand*\cmidrule{\hdashline[.4pt/1pt]}% Dashed middle lines
+%\usepackage{arydshln}
+%\renewcommand*\cmidrule{\hdashline[.4pt/1pt]}% Dashed middle lines
 \usepackage[above]{placeins}
 
 \usepackage{makeidx}
