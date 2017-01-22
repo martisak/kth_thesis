@@ -37,5 +37,5 @@ def helloworld():
 
 ---
 nocite: |
-    @markdowncheatsheet
+    @markdowncheatsheet, @martin_isaksson_2017_256752
 ---

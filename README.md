@@ -86,6 +86,21 @@ And lastly we add an empty `References` section which will be filled in by Pando
 * [pandoc-crossref](https://github.com/lierdakil/pandoc-crossref)
 * [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
+## Citing the template
+
+Please use the following citation.
+
+~~~
+@misc{martin_isaksson_2017_256752,
+  author       = {Martin Isaksson},
+  title        = {martisak/kth_thesis: Initial release},
+  month        = jan,
+  year         = 2017,
+  doi          = {10.5281/zenodo.256752},
+  url          = {https://doi.org/10.5281/zenodo.256752}
+}
+~~~
+
 ## Contributing
 
 I encourage you to help me out with this project. Please fork and submit pull requests. Thank you!
