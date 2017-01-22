@@ -1,6 +1,6 @@
 # Introduction
 
-[![Build Status](https://travis-ci.org/martisak/kth_thesis.svg?branch=master)](https://travis-ci.org/martisak/kth_thesis)
+[![Build Status](https://travis-ci.org/martisak/kth_thesis.svg?branch=master)](https://travis-ci.org/martisak/kth_thesis) [![DOI](https://zenodo.org/badge/78309405.svg)](https://zenodo.org/badge/latestdoi/78309405)
 
 This is a template based on the [KTH NADA templates](http://system.csc.kth.se/misc/tex/) but modified to allow you to write in [Markdown](https://en.wikipedia.org/wiki/Markdown).
 
