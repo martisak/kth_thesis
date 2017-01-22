@@ -16,20 +16,23 @@ env:
     - TEXMFHOME=~/texmf
 
 before_install:
-  # Install TeX Live
-  - mkdir $TEXMFHOME
+  # LaTeX
+  - mkdir -p $TEXMFHOME/tex/latex/kth/
   - sudo apt-get update -qq
-  - sudo apt-get install texlive-full lmodern
+  - sudo apt-get install texlive texlive-xetex texlive-latex-extra texlive-lang-swedish lmodern
+  # Pandoc
   - wget https://github.com/jgm/pandoc/releases/download/1.17.2/pandoc-1.17.2-1-amd64.deb && ar p pandoc-1.17.2-1-amd64.deb data.tar.gz | tar zx
   - sudo pip install pandoc-eqnos pandoc-shortcaption
+  # Extra LaTeX stuff
   - git clone https://github.com/citation-style-language/styles.git $TRAVIS_BUILD_DIR/../styles
   - wget ftp://ftp.nada.kth.se/pub/tex/local/kthesis.tar.gz
   - wget ftp://ftp.nada.kth.se/pub/tex/local/kthsym.tar.gz
   - tar xvzf kthesis.tar.gz -C $TEXMFHOME
   - tar xvzf kthsym.tar.gz -C $TEXMFHOME
-  - wget https://svn.kwarc.info/repos/arXMLiv/trunk/sty/KTHEEtitlepage.sty
+  - wget https://raw.githubusercontent.com/karlkurzer/path_planner_tex/master/KTHEEtitlepage.sty -P $TEXMFHOME/tex/latex/kth/
+  - wget https://github.com/karlkurzer/path_planner_tex/raw/master/kth_logo.pdf -P $TEXMFHOME/tex/generic/kthsym
   - git clone https://github.com/KTH-AC/kthcolors
-  - cp -r kthcolors/lib $TEXMFHOME
+  - cp kthcolors/lib/kthcolors.sty $TEXMFHOME/tex/latex/kth/
 
 # Attempt to create a PDF
 script:

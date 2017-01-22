@@ -39,4 +39,3 @@ def helloworld():
 nocite: |
     @markdowncheatsheet
 ---
-

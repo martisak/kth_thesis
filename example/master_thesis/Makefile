@@ -13,8 +13,9 @@ PANDOC_REFERENCES=--csl=$(CSL) --bibliography=$(BIBTEX)
 
 RM = /bin/rm -f
 PANDOC = pandoc
-RSCRIPT = /usr/bin/Rscript
-LATEX = /usr/bin/xelatex
+RSCRIPT=/usr/bin/Rscript
+LATEX=xelatex
+
 TEX_OBJECTS=$(SOURCES:.md=.tex)
 PDF_OBJECTS=$(SOURCES:.md=.pdf)
 
