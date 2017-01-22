@@ -35,5 +35,5 @@ $(TARGET):
 	$(PANDOC) --latex-engine=$(LATEX) --template=$(TEMPLATE) $(PANDOC_OPTIONS) $(PANDOC_REFERENCES) -o $(TARGET)/$@ $<
 
 clean:
-	-$(RM) $(HTML_OBJECTS) $(TEX_OBJECTS)
+	-$(RM) $(HTML_OBJECTS)
 	-$(RM) -r figure $(TARGET) cache
