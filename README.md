@@ -4,10 +4,12 @@
 
 This is a template based on the [KTH NADA templates](http://system.csc.kth.se/misc/tex/) but modified to allow you to write in [Markdown](https://en.wikipedia.org/wiki/Markdown).
 
-<img src="example/kth-0.png" width="40%"/>
-<img src="example/kth-2.png" width="40%"/>
-<img src="example/kth-6.png" width="40%"/>
-<img src="example/kth-8.png" width="40%"/>
+<img src="example/kth-0.png" width="20%"/>
+<img src="example/kth-2.png" width="20%"/>
+<img src="example/kth-6.png" width="20%"/>
+<img src="example/kth-7.png" width="20%"/>
+<img src="example/kth-8.png" width="20%"/>
+<img src="example/kth-10.png" width="20%"/>
 
 ## The pipeline
 
