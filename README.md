@@ -85,3 +85,7 @@ And lastly we add an empty `References` section which will be filled in by Pando
 
 * [pandoc-crossref](https://github.com/lierdakil/pandoc-crossref)
 * [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
+## Contributing
+
+I encourage you to help me out with this project. Please fork and submit pull requests. Thank you!

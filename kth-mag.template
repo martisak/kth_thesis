@@ -1,16 +1,48 @@
 \documentclass[a4paper]{kth-mag}
 
+$if(logo)$
+    \def\thekthlogo{$logo$}
+$else$
+    \def\thekthlogo{kth_cmyk_comp_science_comm}
+$endif$
+
 \usepackage[eng,exjobb]{KTHEEtitlepage}
+
+\usepackage{rotating,multirow,longtable,booktabs}
+
+% Booktabs styling
+\setlength\heavyrulewidth{1.5pt}% Thick top and bottom lines
+\setlength{\defaultaddspace}{0.65ex}% Adjusted line spacing
+\let\originaltoprule\toprule
+%\renewcommand{\toprule}{\originaltoprule[0pt]}% No top rule
+\renewcommand*{\arraystretch}{1.5}
+
+% Dotted lines, load after longtable
+\usepackage{arydshln}
+\renewcommand*\cmidrule{\hdashline[.4pt/1pt]}% Dashed middle lines
+\usepackage[above]{placeins}
+
+\usepackage{makeidx}
+\makeindex
 
 \usepackage[swedish,english]{babel}
 \usepackage{lipsum}
 \usepackage{fontspec}
-\usepackage{titlesec}
+%\usepackage{titlesec}
+\usepackage{lmodern}
+\usepackage{caption}
+\captionsetup{labelfont=bf}
+
 \defaultfontfeatures{Ligatures=TeX}
 
 \usepackage{kthcolors}
 \usepackage{graphicx} % Required for including images
 \usepackage{hyperref}
+
+%% Aesthetic spacing redefines that look nicer to me than the defaults.
+
+\setlength{\parskip}{12pt}      % Hopp mellan stycken
+\setlength{\parindent}{0pt}     % Indrag
 
 \hypersetup{
     %draft, % Uncomment to remove all links (useful for printing in black and white)
@@ -24,14 +56,37 @@
     pdfproducer={LaTeX with hyperref and ClassicThesis} % PDF producer
 }
 
+\usepackage{listings}
+
+\lstset{ %
+  backgroundcolor=\color{kth-lightgray},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\footnotesize\ttfamily,
+  belowcaptionskip = \baselineskip,
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  frame=tb,                    % adds a frame around the code
+  framesep=5pt,
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{black}, % the style that is used for the line-numbers
+  rulecolor=\color{kth-darkgray},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=true,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  xleftmargin=5pt,
+  xrightmargin=5pt
+}
+
 \begin{document}
 
-                \ititle{$title$}
-                $if(subtitle)$\isubtitle{$subtitle$}$endif$ % Optional
-                \idate{$date$}
-                \irefnr{TRITA-EE 2006:666}
-                \iauthor{$author$}
-                \makeititle
+    \ititle{$title$}
+    $if(subtitle)$\isubtitle{$subtitle$}$endif$ % Optional
+    \idate{$date$}
+    \irefnr{TRITA-EE 2006:666}
+    \iauthor{$author$}
+    \makeititle
 
     $if(abstract)$
     \begin{abstract}
@@ -50,11 +105,20 @@
     \setcounter{tocdepth}{1}
     \tableofcontents
     \clearpage
+    %addcontentsline{toc}{chapter}{Figures}
     \listoffigures
     \clearpage
+    %\addcontentsline{toc}{chapter}{Tables}
     \listoftables
+    \clearpage
+    \lstlistoflistings
     \mainmatter
     \pagenumbering{arabic}
 
 $body$
+
+$if(include-after)$
+    \appendix
+    $include-after$
+$endif$
 \end{document}
