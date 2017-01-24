@@ -1,3 +1,3 @@
 # Code listings
 
-\lstinputlisting[caption=An included file, label=source]{source/source.py}
+\lstinputlisting[language=Python, caption=An included file, label=source]{source/source.py}

@@ -79,6 +79,31 @@ $endif$
   xrightmargin=5pt
 }
 
+
+\newcommand{\ipaddress}[1]{\texttt{#1}}
+
+$if(graphics)$
+\usepackage{graphicx}
+% Redefine \includegraphics so that, unless explicit options are
+% given, the image width will not exceed the width of the page.
+% Images get their normal width if they fit onto the page, but
+% are scaled down if they would overflow the margins.
+\makeatletter
+\def\ScaleIfNeeded{%
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+\let\Oldincludegraphics\includegraphics
+{%
+ \catcode`\@=11\relax%
+ \gdef\includegraphics{\@ifnextchar[{\Oldincludegraphics}{\Oldincludegraphics[width=\ScaleIfNeeded]}}%
+}%
+$endif$
+
 \begin{document}
 
     \ititle{$title$}
@@ -118,7 +143,12 @@ $endif$
 $body$
 
 $if(include-after)$
-    \appendix
+  \appendix
+  \renewcommand{\thechapter}{\Roman{chapter}}
+  $for(include-after)$
+    \clearpage
     $include-after$
+  $endfor$
 $endif$
+
 \end{document}
