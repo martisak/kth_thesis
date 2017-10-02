@@ -1,5 +1,5 @@
 SOURCES=$(wildcard *.md)
-DIR=../../../
+DIR=/usr/local
 #/home/$(USER)/devel/templates
 
 TEMPLATE=$(DIR)/kth_thesis/kth-mag.template
@@ -7,7 +7,7 @@ BIBTEX=example.bib
 CSL=$(DIR)/styles/ieee-with-url.csl
 TARGET = build
 
-PANDOC_OPTIONS=-f markdown+table_captions --listings --table-of-contents --filter pandoc-shortcaption --mathjax=https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML --chapters --include-after-body=$(TARGET)/appendix.tex
+PANDOC_OPTIONS=-f markdown+table_captions --listings --table-of-contents --mathjax=https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML --chapters --include-after-body=$(TARGET)/appendix.tex
 
 PANDOC_REFERENCES=--csl=$(CSL) --bibliography=$(BIBTEX)
 
