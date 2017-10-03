@@ -25,10 +25,8 @@ before_install:
   - sudo pip install pandoc-eqnos pandoc-shortcaption
   # Extra LaTeX stuff
   - git clone https://github.com/citation-style-language/styles.git $TRAVIS_BUILD_DIR/../styles
-  #- wget ftp://ftp.nada.kth.se/pub/tex/local/kthesis.tar.gz
-  #- wget ftp://ftp.nada.kth.se/pub/tex/local/kthsym.tar.gz
-  - wget http://web.student.chalmers.se/~k02hajo/public/Latex/Manualer/KTH%20thesis/kthesis.tar.gz
-  - wget http://web.student.chalmers.se/~k02hajo/public/Latex/Manualer/KTH%20thesis/kthsym.tar.gz
+  - wget ftp://ftp.nada.kth.se/pub/tex/local/kthesis.tar.gz
+  - wget ftp://ftp.nada.kth.se/pub/tex/local/kthsym.tar.gz
   - tar xvzf kthesis.tar.gz -C $TEXMFHOME
   - tar xvzf kthsym.tar.gz -C $TEXMFHOME
   - wget https://raw.githubusercontent.com/karlkurzer/path_planner_tex/master/KTHEEtitlepage.sty -P $TEXMFHOME/tex/latex/kth/
